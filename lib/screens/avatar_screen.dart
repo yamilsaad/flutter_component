@@ -11,14 +11,17 @@ class AvatarScreen extends StatelessWidget {
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 10),
-            child: const CircleAvatar(
-              child: Text('SM'),
-            ),
+            child: CircleAvatar(
+                child: const Text('SM'), backgroundColor: Colors.indigo[900]),
           )
         ],
       ),
       body: const Center(
-        child: Text('AvatarScreen'),
+        child: CircleAvatar(
+          maxRadius: 120,
+          backgroundImage: NetworkImage(
+              'https://media.gq-magazine.co.uk/photos/63468efef4f48bee2acb7062/3:2/w_1620,h_1080,c_limit/Tom-Holland-Spiderman-what-we-know-so-far.jpg'),
+        ),
       ),
     );
   }
