@@ -63,6 +63,25 @@ class InputsScreen extends StatelessWidget {
                   formValues: formValues,
                 ),
                 SizedBox(height: 30),
+
+                //*El dropdownButtonField es un field para seleccionar, en este caso el tipo de usario!!!
+                DropdownButtonFormField(
+                    value: 'Admin',
+                    items: const [
+                      DropdownMenuItem(value: 'Admin', child: Text('Admin')),
+                      DropdownMenuItem(
+                          value: 'Superuser', child: Text('Superuser')),
+                      DropdownMenuItem(
+                          value: 'Developer', child: Text('Developer')),
+                      DropdownMenuItem(
+                          value: 'Developer Jr.', child: Text('Developer Jr'))
+                    ],
+                    onChanged: (value) {
+                      print(value);
+                      formValues['role'] = value ?? 'Admin';
+                    }),
+                //* *************************************************************************
+
                 ElevatedButton(
                   child: const SizedBox(
                       width: double.infinity,
